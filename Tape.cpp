@@ -72,7 +72,7 @@ void Tape::InsertSortedRight(const char& letter) {
     node* q = new node;
     q -> cell = letter;
     prevP = p -> previous;
-    while (p != NULL and letter >= p -> cell) {
+    while (p != NULL && letter >= p -> cell) {
         prevP = p;
         p = p -> next;
     }
@@ -90,7 +90,7 @@ void Tape::InsertSortedLeft(const char& letter) {
     node* q = new node;
     q -> cell = letter;
     prevP = p -> next;
-    while (p != NULL and letter < p -> cell) {
+    while (p != NULL && letter < p -> cell) {
         prevP = p;
         p = p -> previous;
     }

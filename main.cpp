@@ -10,6 +10,7 @@
 #include <fstream>
 #include <iomanip>
 #include <stdlib.h>
+#include <string>
 
 #include "main.h"
 
@@ -113,6 +114,7 @@ void readFile(string filename, Tape& tape, ActionTable& table) {
         line newLine;
         newLine.currState = atoi(&x);
         inData >> newLine.readSymbol;
+        
         //we do this to read in and convert our char to an int properly
         char nextState;
         inData >> nextState;

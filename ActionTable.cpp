@@ -24,7 +24,7 @@ void ActionTable::Iterate() {
 }
 
 bool ActionTable::IsPSet() {
-    if (p < 0 or p > length - 1)
+    if (p < 0 || p > length - 1)
         return false;
     return true;
 }
