@@ -72,7 +72,7 @@ int main() {
 void readFile(string filename, Tape& tape, ActionTable& table) {
     //open file
     ifstream inData;
-    inData.open(filename);
+    inData.open(filename.c_str());
     if (!inData.is_open()) {
         cout << "Indata not found. Terminating." << endl;
         return;

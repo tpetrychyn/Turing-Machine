@@ -12,13 +12,13 @@
 
 Tape::Tape() {
     p = NULL;
-    head = nullptr;
+    head = NULL;
     length = 0;
     //prevP = NULL;
 }
 
 bool Tape::IsPSet() {
-    if (p == nullptr)
+    if (p == NULL)
         return false;
     return true;
 }

@@ -25,7 +25,7 @@ struct line {
 class ActionTable {
     int length;
     int p;
-    line* lineList = new line[100];
+    line lineList[100];
 public:
     ActionTable();
     
