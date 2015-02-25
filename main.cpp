@@ -22,23 +22,32 @@ int lineCount = 0;
 int currState = 0;
 int nextState = 0;
 
-int main() {
+int main(int argc, char *argv[]) {
+    
+    if (argc < 2) {
+        cout << "Usage: main <filename>" << endl;
+        return 0;
+    }
     
     //initialize tape and actiontable
     Tape tape;
     ActionTable table;
     
     //populate them with the instructions from the file
-    readFile("subtraction.txt", tape, table);
+    readFile(argv[1], tape, table);
+    
+    printTape(tape);
     
     table.ResetP();
     table.Iterate();
     while (table.Read().direction != 'H') {
-        printTape(tape);
         //put tape in right spot
         tape.ResetP();
-        for (int i=0;i<currPos;i++)
+        tape.IterateRight();
+        for (int i=0;i<currPos-1;i++) {
+            if(tape.IsPSet())
             tape.IterateRight();
+        }
         
         //table
         table.ResetP();
@@ -64,6 +73,7 @@ int main() {
             }
             table.Iterate();
         }
+        printTape(tape);
     }
     
     cout << endl;
